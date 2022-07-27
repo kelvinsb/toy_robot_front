@@ -75,7 +75,7 @@ const Table = ({ positionX, positionY, facing }: TableProps) => {
                     ""
                   ) : (
                     <img
-                      src="./robot-svgrepo-com(4).svg"
+                      src="./robot-svgrepo-com.svg"
                       alt="robot"
                       style={{
                         width: "100%",

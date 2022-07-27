@@ -8,6 +8,7 @@ const useCommand = () => {
   const [currentX, setCurrentX] = useState<number>(-1);
   const [currentY, setCurrentY] = useState<number>(-1);
   const [currentFacing, setCurrentFacing] = useState<Facing>("NORTH");
+  const [historic, setHistoric] = useState<string[]>([]);
 
   const {
     postData,
@@ -54,6 +55,7 @@ const useCommand = () => {
       setError("Facing must be one of those: NORTH, EAST, SOUTH, WEST");
 
     sendCommand("PLACE", undefined, commandArguments);
+    changeHistoric(`${command} ${commandArguments}`);
   };
 
   const validateMove = (command: Commands) => {
@@ -61,6 +63,7 @@ const useCommand = () => {
     if (!currentId) return;
 
     sendCommand("MOVE", currentId);
+    changeHistoric(command);
   };
 
   const validateLeft = (command: Commands) => {
@@ -68,6 +71,7 @@ const useCommand = () => {
     if (!currentId) return;
 
     sendCommand("LEFT", currentId);
+    changeHistoric(command);
   };
 
   const validateRight = (command: Commands) => {
@@ -75,6 +79,11 @@ const useCommand = () => {
     if (!currentId) return;
 
     sendCommand("RIGHT", currentId);
+    changeHistoric(command);
+  };
+
+  const changeHistoric = (input: string) => {
+    setHistoric((previousHistoric) => [...previousHistoric, input]);
   };
 
   const validateCommand = (input: string) => {
@@ -128,6 +137,7 @@ const useCommand = () => {
     currentX,
     currentY,
     currentFacing,
+    historic,
   };
 };
 

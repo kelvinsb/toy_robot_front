@@ -1,20 +1,19 @@
 import type { NextPage } from "next";
-import { Button, DatePicker, version } from "antd";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { Layout, Row } from "antd";
+import "../styles/Home.module.css";
+import { Content, Header } from "antd/lib/layout/layout";
+import TheBoard from "../components/TheBoard";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.container}>
-        <h1>antd version: {version}</h1>
-        <DatePicker />
-        <Button type="primary" style={{ marginLeft: 8 }}>
-          Primary Button
-        </Button>
-      </div>
-    </div>
+    <Layout className="layout">
+      <Header></Header>
+      <Content style={{ padding: "50px 50px", height: "100%" }}>
+        <Row gutter={[16, 16]}>
+          <TheBoard />
+        </Row>
+      </Content>
+    </Layout>
   );
 };
 

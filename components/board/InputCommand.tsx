@@ -43,7 +43,7 @@ const InputCommand: NextPage<InputCommandProps> = ({
         label="Command"
         name="command"
         rules={[
-          { required: true, message: "Please enter a valid command" },
+          { required: true, message: "Please enter a command" },
           { min: 4, message: "Please enter a command" },
           { max: 15, message: "Maximum of 15 characters" },
         ]}

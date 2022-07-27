@@ -9,8 +9,8 @@ const HistoricTable = ({ historic }: { historic: string[] }) => {
           borderRadius: "5px",
           padding: "15px",
           color: "#fff",
-          minHeight: 215,
-          maxHeight: 215,
+          minHeight: 250,
+          maxHeight: 250,
           overflowY: "auto",
           marginTop: 15,
         }}

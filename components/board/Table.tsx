@@ -55,9 +55,45 @@ const Table = ({ positionX, positionY, facing }: TableProps) => {
 
   return (
     <>
+      <Row>
+        <Col
+          span={2}
+          style={{
+            height: "50px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        ></Col>
+        {new Array(grid[0].length).fill(1).map((item, index) => (
+          <Col
+            span={4}
+            key={index}
+            style={{
+              height: "50px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {index}
+          </Col>
+        ))}
+      </Row>
       {grid.map((yAXis, YIndex) => {
         return (
           <Row key={YIndex}>
+            <Col
+              span={2}
+              style={{
+                height: "50px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {YIndex}
+            </Col>
             {yAXis.map((xAxis, XIndex) => (
               <Col
                 key={XIndex}

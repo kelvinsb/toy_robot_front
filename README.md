@@ -40,15 +40,3 @@ Robot will face the right side(90 degrees)
 
 - `yarn dev` or `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

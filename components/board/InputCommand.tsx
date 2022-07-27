@@ -19,6 +19,7 @@ const InputCommand: NextPage<InputCommandProps> = ({
   validateCommand,
 }) => {
   const [form] = useForm();
+
   const onFinish = (values: { command: string }) => {
     const { command } = values;
     validateCommand(command);
@@ -49,7 +50,11 @@ const InputCommand: NextPage<InputCommandProps> = ({
         ]}
         normalize={(value) => value.toUpperCase()}
       >
-        <Input style={{ width: 200 }} autoFocus />
+        <Input
+          style={{ width: 200 }}
+          autoFocus
+          ref={(input) => input && input.focus()}
+        />
       </Form.Item>
 
       <Form.Item>
